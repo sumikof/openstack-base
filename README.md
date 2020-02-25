@@ -1,4 +1,4 @@
-# k8s-openstack-base
-Openstack on Kubernetes Base Dockerfile
+# openstack-base
+Openstack on docker Base Dockerfile
 
 render conf file jinja2
