@@ -9,3 +9,9 @@ RUN add-apt-repository cloud-archive:stein
 RUN apt update -y && \
     apt -y upgrade && \
     apt install -y python-jinja2
+
+ADD render_template.py /
+RUN chmod u+x render_template.py
+
+RUN mkdir /template
+RUN mkdir /entrypoint
