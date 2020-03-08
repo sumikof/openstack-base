@@ -10,8 +10,8 @@ RUN apt update -y && \
     apt -y upgrade && \
     apt install -y python-jinja2
 
-ADD render_template.py /
-RUN chmod u+x render_template.py
+ADD render /usr/local/bin
+RUN chmod u+x /usr/local/bin/render
 
 RUN mkdir /template
 RUN mkdir /entrypoint
