@@ -4,11 +4,17 @@ LABEL maintainer="Sumikof"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update -y && apt -y install software-properties-common
+RUN apt update -y \
+ && apt -y install \
+    software-properties-common
+
 RUN add-apt-repository cloud-archive:stein
-RUN apt update -y && \
-    apt -y upgrade && \
-    apt install -y python-jinja2
+
+RUN apt update -y \
+ && apt -y upgrade \
+ && apt install -y \
+    python-jinja2 \
+ && apt clean
 
 ADD render /usr/local/bin
 RUN chmod u+x /usr/local/bin/render
